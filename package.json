@@ -1,0 +1,69 @@
+{
+  "name": "@miloun/cosmo",
+  "version": "0.1.0",
+  "description": "Ergonomic internationalization (i18n) and localization (l10n) for JavaScript & Node — format numbers, currency, dates, times, units, lists, relative time and plurals for any locale on the standard Intl/ICU (ECMA-402) API. Zero dependencies, no bundled locale data.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Miloun",
+    "email": "cosmo-js@miloun.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmo-intl/cosmo-js.git"
+  },
+  "homepage": "https://github.com/cosmo-intl/cosmo-js#readme",
+  "bugs": "https://github.com/cosmo-intl/cosmo-js/issues",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "internationalization",
+    "internationalisation",
+    "localization",
+    "localisation",
+    "intl",
+    "ecma-402",
+    "icu",
+    "cldr",
+    "unicode",
+    "locale",
+    "translation",
+    "currency",
+    "money",
+    "number-format",
+    "date",
+    "datetime",
+    "timezone",
+    "relative-time",
+    "pluralization",
+    "formatter"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "changelog.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.ts",
+    "example": "npm run build && node example.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
