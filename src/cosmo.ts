@@ -838,7 +838,11 @@ export class Cosmo {
     if (typeof fn !== "function") {
       throw new UnsupportedError("supportedValues() requires Intl.supportedValuesOf (Node 18+).");
     }
-    return fn(key);
+    try {
+      return fn(key);
+    } catch {
+      throw new InvalidArgumentError(`"${key}" is not a valid supportedValues key.`);
+    }
   }
 
   // #endregion
