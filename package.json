@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/cosmo-intl/cosmo-js.git"
   },
-  "homepage": "https://github.com/cosmo-intl/cosmo-js#readme",
+  "homepage": "https://cosmo.miloun.com/",
   "bugs": "https://github.com/cosmo-intl/cosmo-js/issues",
   "keywords": [
     "i18n",
@@ -61,9 +61,11 @@
     "prepublishOnly": "npm run clean && npm run build",
     "pretest": "npm run build",
     "test": "node --test test/*.test.ts",
-    "example": "npm run build && node example.ts"
+    "example": "npm run build && node example.ts",
+    "docs": "typedoc src/index.ts --out site --name \"Cosmo (JavaScript) — API reference\""
   },
   "devDependencies": {
+    "typedoc": "^0.28.19",
     "typescript": "^5.6.0"
   }
 }
