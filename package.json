@@ -1,6 +1,6 @@
 {
   "name": "@miloun/cosmo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ergonomic internationalization (i18n) and localization (l10n) for JavaScript & Node — format numbers, currency, dates, times, units, lists, relative time and plurals for any locale on the standard Intl/ICU (ECMA-402) API. Zero dependencies, no bundled locale data.",
   "type": "module",
   "license": "MIT",

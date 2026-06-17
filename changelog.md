@@ -1,5 +1,11 @@
 Changelog
 =========
+* v1.1.0
+    - Added `precision(value, fractionDigits = 2, options?)` — formats a number with a
+      fixed number of fraction digits (default 2), padding with trailing zeros and
+      rounding as needed (`1` → `"1.00"`, `1.002` → `"1.00"`, never `"1.0"`). The trailing
+      `NumberOptions` bag widens the band (e.g. `{ maximumFractionDigits: 3 }`) or tweaks
+      rounding/grouping. Locale-formatted like `number()`.
 * v0.1.0 — initial (unstable) JavaScript / Node port of [salarmehr/cosmopolitan](https://github.com/salarmehr/cosmopolitan)
     - Built entirely on the standard `Intl` API (ICU) with **zero runtime dependencies** and **no bundled locale data**
     - PHP-ported core: `language`, `country`, `script`, `calendar`, `currency` (name + symbol),
