@@ -64,6 +64,17 @@ test("number, percentage", () => {
   assert.equal(new Cosmo("de").number(123400.567), "123.400,567");
 });
 
+test("precision", () => {
+  assert.equal(new Cosmo("en").precision(1), "1.00"); // fractionDigits defaults to 2
+  assert.equal(new Cosmo("en").precision(1, 2), "1.00");
+  assert.equal(new Cosmo("en").precision(1.002, 2), "1.00");
+  assert.equal(new Cosmo("en").precision(1.5, 2), "1.50");
+  assert.equal(new Cosmo("en").precision(1234.5, 2), "1,234.50");
+  assert.equal(new Cosmo("de").precision(1.5, 2), "1,50");
+  // options widen the band: at least 1, at most 3 fraction digits.
+  assert.equal(new Cosmo("en").precision(1.2, 1, { maximumFractionDigits: 3 }), "1.2");
+});
+
 test("money", () => {
   assert.equal(new Cosmo("en_AU").money(12.3, "AUD"), "$12.30");
   assert.equal(new Cosmo("en_US").money(12.3, "AUD"), "A$12.30");
